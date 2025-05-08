@@ -1,71 +1,267 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <title>Şehrim</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Şehrim - Trabzon</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f8fc;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #800000, #8b1c1c, #005f8f, #008cba);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid #00476a;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .slider-container {
+      position: relative;
+      max-width: 900px;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 4px solid #0077aa;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 700%; /* 7 slider */
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    .slider-buttons {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 10px;
+    }
+
+    .slider-buttons button {
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.active {
+      background-color: #0077aa;
+    }
+
+    .content-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-left: 8px solid #8b0000;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      color: #005f8f;
+      border-bottom: 2px solid #99ccec;
+      padding-bottom: 5px;
+    }
+
+    a {
+      color: #0077aa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #005f8f;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <a class="navbar-brand" href="index.html">Alperen Çebi</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
-              <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
-              <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-              <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      
 
-  <header class="bg-success text-white text-center py-5">
-    <h1>Şehrim: Bursa</h1>
-  </header>
-
-  <div class="container my-5">
-
-    <div id="slider" class="carousel slide mb-4" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="img/ulucami.jpg" class="d-block w-100" alt="Ulucami">
-        </div>
-        <div class="carousel-item">
-          <img src="img/uludag.jpg" class="d-block w-100" alt="Uludağ">
-        </div>
-        <div class="carousel-item">
-          <img src="img/cumalikizik.jpg" class="d-block w-100" alt="Cumalıkızık">
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Alperen Çebi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        </ul>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </button>
     </div>
+  </nav>
 
-    <section>
-      <h2>Ulucami</h2>
-      <p>Osmanlı’nın önemli yapılarından biri.</p>
-    </section>
+<header>
+  <h1>Trabzon - Karadeniz'in İncisi</h1>
+</header>
 
-    <section>
-      <h2>Uludağ</h2>
-      <p>Kış turizminin gözdesi.</p>
-    </section>
-
+<!-- SLIDER -->
+<div class="slider-container">
+  <div class="slides" id="slideWrapper">
+    <a href="#sumela" class="slide"><img src="img/slider1.jpg" alt="Sümela Manastırı"></a>
+    <a href="#uzungol" class="slide"><img src="img/slider2.jpg" alt="Uzungöl"></a>
+    <a href="#boztepe" class="slide"><img src="img/slider3.jpg" alt="Boztepe"></a>
+    <a href="#ayasofya" class="slide"><img src="img/slider4.jpg" alt="Trabzon Ayasofya"></a>
+    <a href="#forum" class="slide"><img src="img/slider5.jpg" alt="KTÜ"></a>
+    <a href="#trabzonkalesi" class="slide"><img src="img/slider6.jpg" alt="Trabzon Kalesi"></a>
+    <a href="#ataturkkosku" class="slide"><img src="img/slider7.jpg" alt="Atatürk Köşkü"></a>
   </div>
 
-  <footer class="bg-light text-center py-3">
-    <p>&copy; 2025 Alperen Çebi</p>
-  </footer>
+  <div class="slider-buttons">
+    <button onclick="prevSlide()">&#10094;</button>
+    <button onclick="nextSlide()">&#10095;</button>
+  </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="dots" id="dots"></div>
+
+<!-- İÇERİK -->
+<section class="content-section">
+  <h2>Genel Bilgiler</h2>
+  <p>Trabzon, Karadeniz Bölgesi'nin en önemli şehirlerinden biridir. Yaklaşık <strong>817.000</strong> nüfusu ile hem tarihi hem de doğal güzellikleri ile dikkat çeker.</p>
+</section>
+
+<section class="content-section" id="sumela">
+  <h2>Sümela Manastırı</h2>
+  <p>Maçka ilçesinde, sarp kayalıklar üzerine inşa edilmiş olan bu manastır, doğa ve tarih severlerin vazgeçilmez adresidir.</p>
+</section>
+
+<section class="content-section" id="uzungol">
+  <h2>Uzungöl</h2>
+  <p>Çaykara ilçesinde bulunan Uzungöl, muhteşem göl manzarası ve çevresindeki doğal alanlarla ünlüdür.</p>
+</section>
+
+<section class="content-section" id="boztepe">
+  <h2>Boztepe</h2>
+  <p>Trabzon’u yukarıdan izleyebileceğiniz en güzel noktalardan biridir. Özellikle gün batımında manzara büyüleyicidir.</p>
+</section>
+
+<section class="content-section" id="ayasofya">
+  <h2>Trabzon Ayasofya Müzesi</h2>
+  <p>Bizans döneminde kilise olarak inşa edilmiş, Osmanlı döneminde cami olarak kullanılmıştır. Günümüzde hem cami hem de müze olarak değerlendirilmektedir. Tarihi freskleriyle dikkat çeker.</p>
+</section>
+
+<section class="content-section" id="forum">
+  <h2>Karadeniz Teknik Üniversitesi (KTÜ)</h2>
+  <p>Karadeniz Teknik Üniversitesi (KTÜ), 20 Mayıs 1955 tarihinde kurulmuş ve İstanbul ile Ankara dışında kurulan ilk üniversite olmuştur. 19 Eylül 1963 tarihinde eğitim-öğretime başlayan üniversite, bugün 12 fakülte, 8 meslek yüksekokulu, 1 yüksekokul, 6 enstitü ve 25 araştırma ve uygulama merkezi ile faaliyet göstermektedir. KTÜ, Türkiye'nin en köklü üniversitelerinden biri olarak bilimsel araştırmalar ve eğitimde önemli bir rol oynamaktadır.</p>
+</section>
+
+<section class="content-section" id="trabzonkalesi">
+  <h2>Trabzon Kalesi</h2>
+  <p>Trabzon’un tarihî surları ve kalıntıları, şehrin en eski yapılarındandır. Roma ve Bizans izleri taşır.</p>
+</section>
+
+<section class="content-section" id="ataturkkosku">
+  <h2>Atatürk Köşkü</h2>
+  <p>Mustafa Kemal Atatürk’ün Trabzon ziyaretlerinde kaldığı köşktür. Zengin mimarisi ve bahçesiyle dikkat çeker.</p>
+</section>
+
+<section class="content-section">
+  <h2>Trabzon'un Fethinde Çebi'ler</h2>
+  <p>Fatih Sultan Mehmet, Trabzon'u fethetmek için önce Pontus İmparatorluğu'nun başşehri olan Trabzon'a güvenilir iki uç beyini göndermiştir. Bu uç beylerinden biri <strong>Çebi</strong>, diğeri <strong>Üçüncü</strong>'dür.</p>
+  <p>Bu beyler kale içinde gözlem yaparak, zayıf noktaları içeren bir rapor hazırlamışlardır. Fatih bu rapor doğrultusunda sefere çıkarak Trabzon'u 1462 yılında fethetmiştir.</p>
+  <p>Fetihten sonra Çebi ailesine yazlık ve kışlık yerler verilmiştir.</p>
+  <p><em>(Kaynak: Üçüncü Oğullarının Osmanlı Arşiv Çalışmaları)</em></p>
+</section>
+
+<!-- SLIDER JS -->
+<script>
+  const slides = document.getElementById('slideWrapper');
+  const dotContainer = document.getElementById('dots');
+  let currentSlide = 0;
+  const totalSlides = 7;
+
+  // Dots oluştur
+  for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('span');
+    dot.classList.add('dot');
+    if (i === 0) dot.classList.add('active');
+    dot.onclick = () => moveToSlide(i);
+    dotContainer.appendChild(dot);
+  }
+
+  function moveToSlide(index) {
+    currentSlide = index;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    updateDots();
+  }
+
+  function updateDots() {
+    const allDots = document.querySelectorAll('.dot');
+    allDots.forEach(dot => dot.classList.remove('active'));
+    allDots[currentSlide].classList.add('active');
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    moveToSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    moveToSlide(currentSlide);
+  }
+
+  setInterval(() => nextSlide(), 4000);
+</script>
+
+<footer style="background-color: #333;">
+  <p>&copy; 2025 Alperen Çebi </p>
+  <a href="#top" class="btn btn-outline-primary btn-sm">Yukarı Çık</a>
+</footer>
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İlgi Alanlarım</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .hobi-img {
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ORTAK NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Alperen Çebi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOBİLER -->
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">İlgi Alanlarım</h1>
+
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <h5>Satranç</h5>
+        <img src="img/satranc.jpg" class="img-fluid hobi-img" alt="Satranç" />
+        <p>Satranç oynamak, strateji geliştirme ve odaklanma becerilerimi geliştiriyor.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Yüzme</h5>
+        <img src="img/yuzme.jpg" class="img-fluid hobi-img" alt="Yüzme" />
+        <p>Yüzme, hem sağlıklı kalmamı sağlar hem de zihnimi boşaltır.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Bisiklet</h5>
+        <img src="img/bisiklet.jpg" class="img-fluid hobi-img" alt="Bisiklet" />
+        <p>Bisiklet sürmek doğayla iç içe olmamı ve spor yapmamı sağlar.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Yürüyüş</h5>
+        <img src="img/yuruyus.jpg" class="img-fluid hobi-img" alt="Yürüyüş" />
+        <p>Yürüyüş yaparken müzik dinlemek bana huzur veriyor.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Kitap Okuma</h5>
+        <img src="img/kitap.jpg" class="img-fluid hobi-img" alt="Kitap Okuma" />
+        <p>Kitap okumak hayal gücümü ve kelime dağarcığımı geliştiriyor.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h5>Tiyatro</h5>
+        <img src="img/tiyatro.jpg" class="img-fluid hobi-img" alt="Tiyatro" />
+        <p>Tiyatroya gitmek sanatsal yönümü besliyor.</p>
+      </div>
+    </div>
+
+    <!-- API KISMI -->
+    <hr class="my-5" />
+    <h2 class="mb-4 text-center">Film Hobim: Popüler Filmler (TMDB API)</h2>
+    <div id="filmListesi" class="row g-4"></div>
+  </div>
+
+  <!-- Bootstrap ve JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- TMDB API JavaScript -->
+  <script>
+    const apiKey = "TMDB_API_KEYINIZ"; // Buraya kendi TMDB API anahtarınızı girin
+    const filmListesi = document.getElementById("filmListesi");
+
+    fetch(`https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1&api_key=${apiKey}`)
+      .then((res) => res.json())
+      .then((data) => {
+        data.results.slice(0, 6).forEach((film) => {
+          const col = document.createElement("div");
+          col.className = "col-md-4";
+          col.innerHTML = `
+            <div class="card h-100 shadow-sm">
+              <img src="https://image.tmdb.org/t/p/w500${film.poster_path}" class="card-img-top" alt="${film.title}" />
+              <div class="card-body">
+                <h5 class="card-title">${film.title}</h5>
+                <p class="card-text">${film.overview.substring(0, 100)}...</p>
+              </div>
+            </div>
+          `;
+          filmListesi.appendChild(col);
+        });
+      })
+      .catch((err) => {
+        filmListesi.innerHTML = "<p>Film verileri yüklenemedi.</p>";
+        console.error(err);
+      });
+  </script>
+
+</body>
+</html>

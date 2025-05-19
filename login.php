@@ -24,25 +24,26 @@ session_start();
 </head>
 <body>
 <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="http://localhost/Proje/index.html">Alperen Çebi</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
-          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
-          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
-          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Alperen Çebi</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+        <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+        <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
   <!-- Giriş Mesajı -->
   <div class="container mt-3">

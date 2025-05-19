@@ -1,0 +1,87 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.main-header {
+  background: linear-gradient(90deg, #800000, #000080);
+  color: white;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  border-bottom: 2px solid #0d6efd;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+/* Genel gövde ayarları */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: linear-gradient(90deg, #800000, #000080);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+/* Profil resmi */
+.profile-img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-bottom: 1rem;
+}
+
+/* Bölüm başlığı */
+.section-title {
+    border-bottom: 2px solid #0d6efd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    color: #0d6efd;
+}
+
+/* İçerik kutusu */
+section {
+    background-color: #f8f9fa;
+    border-left: 5px solid #0d6efd;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #e9ecef;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Yukarı dön düğmesi (isteğe bağlı) */
+footer a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-decoration: none;
+}
+
+/* Aktif navbar bağlantısı */
+.navbar .nav-link.active {
+    font-weight: bold;
+    color: #0d6efd !important;
+}

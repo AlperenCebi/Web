@@ -6,58 +6,84 @@
   <title>İlgi Alanlarım</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
+    /* Genel body stili */
     body {
+      font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9fa;
-    }
-    .hobi-img {
-      height: 200px;
-      object-fit: cover;
-      border-radius: 12px;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-      header {
-            background: linear-gradient(90deg, #800000, #000080);
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-    
+    /* Header stili: degrade arkaplan, beyaz yazı, ortalanmış */
+    header {
+      background: linear-gradient(90deg, #800000, #000080);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    /* Hobi resimleri */
+    .hobi-img {
+      width: 100%;             /* Kapsayıcı genişliğine tam otur */
+      height: auto;            /* Yükseklik oranı korunur */
+      max-height: 200px;       /* Maksimum yükseklik sınırı */
+      object-fit: contain;     /* Boşluk oluşabilir ama resim tamamı görünür */
+      border-radius: 12px;     /* Yuvarlatılmış köşeler */
+      background-color: #f0f0f0; /* Boşluklar için açık arka plan */
+      display: block;          /* Alt boşluklar için block yap */
+      margin-left: auto;       /* Ortalamak için */
+      margin-right: auto;
+    }
+
+    /* Footer stili */
+    .site-footer {
+      background-color: #f8f9fa;
+      padding: 1rem;
+      text-align: center;
+      margin-top: auto; /* Footer sayfanın altında kalır */
+    }
+
+    /* Responsive ayarlar */
+    @media (max-width: 576px) {
+      .hobi-img {
+        max-height: 150px; /* Küçük ekranlarda biraz daha küçük */
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- ORTAK NAVBAR -->
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Alperen Çebi</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
-        <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
-        <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
-        <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-        <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Alperen Çebi</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+          <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
+          <li class="nav-item"><a class="nav-link active " href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
+  <!-- Başlık -->
+  <header>
+    <h1>İlgi Alanlarım</h1>
+  </header>
 
-
-   <header>
-        <h1>İlgi Alanlarım</h>
-    </header>
-
-  <!-- HOBİLER -->
+  <!-- Hobiler -->
   <div class="container mt-5">
-
     <div class="row">
       <div class="col-md-4 mb-4">
         <h5>Satranç</h5>
@@ -91,7 +117,7 @@
       </div>
     </div>
 
-    <!-- API KISMI -->
+    <!-- API Kısmı -->
     <hr class="my-5" />
     <h2 class="mb-4 text-center">Film-Hobim</h2>
     <div id="filmListesi" class="row g-4"></div>
@@ -102,7 +128,7 @@
 
   <!-- TMDB API JavaScript -->
   <script>
-    const apiKey = "af8b66f8421c24c4c1d1773cfdc95b52"; // Buraya kendi TMDB API anahtarınızı girin
+    const apiKey = "af8b66f8421c24c4c1d1773cfdc95b52"; // Kendi API anahtarını buraya koy
     const filmListesi = document.getElementById("filmListesi");
 
     fetch(`https://api.themoviedb.org/3/movie/popular?language=tr-TR&page=1&api_key=${apiKey}`)
@@ -129,5 +155,10 @@
       });
   </script><br>
 
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Alperen Çebi </p>
+    <a href="#top" class="btn btn-outline-primary btn-sm">Yukarı Çık</a>
+  </footer>
 </body>
 </html>

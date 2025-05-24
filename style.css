@@ -80,8 +80,4 @@ footer a {
     text-decoration: none;
 }
 
-/* Aktif navbar bağlantısı */
-.navbar .nav-link.active {
-    font-weight: bold;
-    color: #0d6efd !important;
-}
+

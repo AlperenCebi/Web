@@ -3,60 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <title>Trabzon - Mirasımız ve Trabzonspor</title>
+  <!--
+    Viewport meta tag:
+    Mobil cihazlarda sayfanın genişliğini cihaz genişliğine eşitler,
+    sayfa ölçeğini 1 olarak ayarlar,
+    responsive tasarım için zorunludur.
+  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    body{
+    /* Sayfa genel stili */
+    body {
       background-color: #ffffff;
       color: #000;
       font-family: 'Segoe UI', sans-serif;
     }
+
+    /* Başlık stili: sol tarafında renkli çizgi */
     h2 {
-      border-left: 5px solid #6c63ff; 
+      border-left: 5px solid #6c63ff;
       padding-left: 10px;
       margin-bottom: 30px;
     }
+
+    /* Bölüm aralığı ve alt çizgi */
     .section {
       padding: 60px 0;
       border-bottom: 1px solid #ddd;
     }
+
+    /* Kart özel stili: hafif gölge ve hover efekti */
     .card-custom {
       background-color: #f8f9fa;
       border: none;
       color: #000;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       transition: transform 0.2s;
+      border-radius: 10px; /* Kartların köşeleri yuvarlatıldı */
     }
     .card-custom:hover {
       transform: scale(1.02);
     }
+
+    /* Görsellerin responsive olması ve köşe yuvarlatma */
     .img-fluid {
       border-radius: 10px;
+      width: 100%; /* Görsel genişliği kolon genişliğine göre */
+      height: auto; /* Oran korunur */
     }
+
+    /* Başlık kısmı degrade arka plan, ortalanmış ve renkli */
     .header-gradient {
       background: linear-gradient(90deg, #800000, #000080);
       padding: 60px 0;
       text-align: center;
       color: white;
     }
+
+    /* Responsive için ek ayarlar */
+    @media (max-width: 767.98px) {
+      /* Küçük ekranlarda bölümlerde padding azalt */
+      .section {
+        padding: 30px 0;
+      }
+    }
   </style>
 </head>
 <body>
 
- <!-- Navbar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="index.html">Alperen Çebi</a>
+    <!-- Mobil menü açma butonu -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Menüyü Aç/Kapat">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <!-- Menü içerikleri -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
         <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-        <li class="nav-item"><a class="nav-link" href="mirasimiz.html">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link active" href="mirasimiz.html">Mirasımız</a></li>
         <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
         <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
         <li class="nav-item"><a class="nav-link" href="login.php">Giriş</a></li>
@@ -65,109 +98,113 @@
   </div>
 </nav>
 
-  <div class="header-gradient">
-    <h1 class="display-4 fw-bold">Trabzon - Mirasımız ve Trabzonspor</h1>
-    <p class="lead">Tarih, Kültür ve Sporun Buluşma Noktası</p>
-  </div>
+<!-- Başlık Bölümü -->
+<div class="header-gradient">
+  <h1 class="display-4 fw-bold">Trabzon - Mirasımız ve Trabzonspor</h1>
+  <p class="lead">Tarih, Kültür ve Sporun Buluşma Noktası</p>
+</div>
 
-  <div class="container py-5">
-    <!-- Mirasımız -->
-    <section class="section" id="mirasimiz">
-      <h2>Mirasımız</h2>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Ayasofya Camii</h5>
-            <img src="img/ayasofya.jpg" alt="Ayasofya Camii" class="img-fluid mb-3">
-            <p>13. yüzyılda inşa edilen bu yapı, Trabzon'un simge eserlerindendir. Freskleri ve mimarisiyle hem Bizans hem de Osmanlı izlerini taşır.</p>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Kuymak</h5>
-            <img src="img/kuymak.jpg" alt="Kuymak" class="img-fluid mb-3">
-            <p>Hamsili pilav, kara lahana sarması, kuymak gibi eşsiz Karadeniz yemekleriyle Trabzon mutfağı damaklarda iz bırakır.</p>
-          </div>
-        </div> 
-
-          <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Sümela Manastırı</h5>
-            <img src="img/sumela.jpg" alt="Sümela Manastırı" class="img-fluid mb-3">
-            <p>Maçka ilçesinde sarp kayalıklara oyularak yapılmış bu manastır, tarihi ve doğal güzelliğiyle büyüler. 4. yüzyıldan bu yana varlığını korur.</p>
-          </div><br>
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Trabzon’un Kültürü</h5>
-            <img src="img/horon.jpg" alt="Horon Oyunu" class="img-fluid mb-3">
-            <p>Horon, kemençe ve tulum eşliğinde oynanan geleneksel Karadeniz halk oyunudur. Kazaziye gibi el sanatları da Trabzon’un kültürel mirasının önemli parçalarıdır.</p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Keşan</h5>
-            <img src="img/keşan.jpg" alt="Horon Oyunu" class="img-fluid mb-3">
-            <p>
-Trabzon'lu kadınların örtünme amacıyla kullandığı sarı, kırmızı, siyah ve beyaz renklerin hakim olduğu Keşan bezi, 500 yıldır kadınlar tarafından pamuk ipliklerinin bir haftayı aşan boyama ve çözgü işlemlerinin ardından el yapımı tezgahlarda ilmek ilmek dokunuyor.</p>
-          </div>
-        </div>
-       <!--<div class="col-md-6">
-          <div class="card card-custom p-4">
-            <h5 class="mb-3">Trabzon’un Kültürü</h5>
-            <img src="img/horon.jpg" alt="Horon Oyunu" class="img-fluid mb-3">
-            <p>Horon, kemençe ve tulum eşliğinde oynanan geleneksel Karadeniz halk oyunudur. Kazaziye gibi el sanatları da Trabzon’un kültürel mirasının önemli parçalarıdır.</p>
-          </div>
-        </div>
-      -->
-      </div>
-    </section>
-
-    <!-- Takımımız -->
-    <section class="section" id="takimimiz">
-      <h2>Takımımız - Trabzonspor</h2>
-      <div class="row g-4">
-        <div class="col-md-4 text-center">
-          <img src="img/ts-logo.png" alt="Trabzonspor Logosu" class="img-fluid mb-3" style="max-height: 150px;">
-          <h5>Trabzonspor</h5>
-          <p class="text-muted">Kuruluş: 2 Ağustos 1967</p>
-        </div>
-        <div class="col-md-8">
-          <div class="card card-custom p-4">
-            <p>
-              Trabzonspor, Anadolu’nun sesi olmuş bir efsanedir. 1976 yılında şampiyon olarak İstanbul takımlarının saltanatını yıkan ilk Anadolu kulübüdür.
-              Bordo-mavi renkleri, Karadeniz’in sert rüzgarlarını ve halkının inatçı ruhunu temsil eder.
-            </p>
-            <p>
-              Şenol Güneş, Fatih Tekke, Hami Mandıralı gibi efsaneler bu kulüpten çıkmıştır. 2022 yılında kazanılan Süper Lig şampiyonluğu ile tekrar zirveye oturmuştur.
-            </p>
-            <p>
-              Taraftar grubu Vira’nın önderliğinde maçlar adeta birer görsel şölene dönüşür.
-            </p>
-          </div>
+<!-- Ana İçerik -->
+<div class="container py-5">
+  <!-- Mirasımız Bölümü -->
+  <section class="section" id="mirasimiz">
+    <h2>Mirasımız</h2>
+    <div class="row g-4">
+      <!-- Bootstrap grid: orta ekran ve üzeri 6 sütun, küçük ekranda 12 sütun (tam genişlik) -->
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-4 h-100">
+          <h5 class="mb-3">Ayasofya Camii</h5>
+          <img src="img/ayasofya.jpg" alt="Ayasofya Camii" class="img-fluid mb-3">
+          <p>13. yüzyılda inşa edilen bu yapı, Trabzon'un simge eserlerindendir. Freskleri ve mimarisiyle hem Bizans hem de Osmanlı izlerini taşır.</p>
         </div>
       </div>
 
-      <div class="row mt-4 text-center">
-        <div class="col-md-4">
-          <img src="img/ts-stad.jpg" class="img-fluid mb-2" alt="Şenol Güneş Stadı">
-          <p>Şenol Güneş Spor Kompleksi</p>
-        </div>
-        <div class="col-md-4">
-          <img src="img/ts-takim.jpg" class="img-fluid mb-2" alt="Trabzonspor Takımı">
-          <p>Taraftar Gurubumuz</p>
-        </div>
-        <div class="col-md-4">
-          <img src="img/ts-taraftar.jpg" class="img-fluid mb-2" alt="Taraftarlar">
-          <p>Şampiyon Kadro </p>
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-4 h-100">
+          <h5 class="mb-3">Kuymak</h5>
+          <img src="img/kuymak.jpg" alt="Kuymak" class="img-fluid mb-3">
+          <p>Hamsili pilav, kara lahana sarması, kuymak gibi eşsiz Karadeniz yemekleriyle Trabzon mutfağı damaklarda iz bırakır.</p>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="text-center mt-5 text-muted">
-      <small>&copy; 2025 Trabzon Tanıtım Sayfası</small>
-    </footer>
-  </div>
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-4 h-100">
+          <h5 class="mb-3">Sümela Manastırı</h5>
+          <img src="img/sumela.jpg" alt="Sümela Manastırı" class="img-fluid mb-3">
+          <p>Maçka ilçesinde sarp kayalıklara oyularak yapılmış bu manastır, tarihi ve doğal güzelliğiyle büyüler. 4. yüzyıldan bu yana varlığını korur.</p>
+        </div>
+      </div>
 
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-4 h-100">
+          <h5 class="mb-3">Trabzon’un Kültürü</h5>
+          <img src="img/horon.jpg" alt="Horon Oyunu" class="img-fluid mb-3">
+          <p>Horon, kemençe ve tulum eşliğinde oynanan geleneksel Karadeniz halk oyunudur. Kazaziye gibi el sanatları da Trabzon’un kültürel mirasının önemli parçalarıdır.</p>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card card-custom p-4 h-100">
+          <h5 class="mb-3">Keşan</h5>
+          <img src="img/keşan.jpg" alt="Keşan Bezi" class="img-fluid mb-3">
+          <p>Trabzon'lu kadınların örtünme amacıyla kullandığı sarı, kırmızı, siyah ve beyaz renklerin hakim olduğu Keşan bezi, 500 yıldır kadınlar tarafından pamuk ipliklerinin bir haftayı aşan boyama ve çözgü işlemlerinin ardından el yapımı tezgahlarda ilmek ilmek dokunuyor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Takımımız Bölümü -->
+  <section class="section" id="takimimiz">
+    <h2>Takımımız - Trabzonspor</h2>
+    <div class="row g-4">
+      <!-- Küçük ve orta ekranlarda 12 sütun, büyük ekranlarda 4 sütun genişlik -->
+      <div class="col-12 col-lg-4 text-center">
+        <img src="img/ts-logo.png" alt="Trabzonspor Logosu" class="img-fluid mb-3" style="max-height: 150px;">
+        <h5>Trabzonspor</h5>
+        <p class="text-muted">Kuruluş: 2 Ağustos 1967</p>
+      </div>
+
+      <div class="col-12 col-lg-8">
+        <div class="card card-custom p-4 h-100">
+          <p>
+            Trabzonspor, Anadolu’nun sesi olmuş bir efsanedir. 1976 yılında şampiyon olarak İstanbul takımlarının saltanatını yıkan ilk Anadolu kulübüdür.
+            Bordo-mavi renkleri, Karadeniz’in sert rüzgarlarını ve halkının inatçı ruhunu temsil eder.
+          </p>
+          <p>
+            Şenol Güneş, Fatih Tekke, Hami Mandıralı gibi efsaneler bu kulüpten çıkmıştır. 2022 yılında kazanılan Süper Lig şampiyonluğu ile tekrar zirveye oturmuştur.
+          </p>
+          <p>
+            Taraftar grubu Vira’nın önderliğinde maçlar adeta birer görsel şölene dönüşür.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Resimler alt alta küçük ekran, yanyana büyük ekran -->
+    <div class="row mt-4 text-center g-3">
+      <div class="col-12 col-md-4">
+        <img src="img/ts-stad.jpg" class="img-fluid rounded mb-2" alt="Şenol Güneş Stadı">
+        <p>Şenol Güneş Spor Kompleksi</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <img src="img/ts-takim.jpg" class="img-fluid rounded mb-2" alt="Trabzonspor Takımı">
+        <p>Taraftar Gurubumuz</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <img src="img/ts-taraftar.jpg" class="img-fluid rounded mb-2" alt="Taraftarlar">
+        <p>Şampiyon Kadro</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 text-muted">
+    <small>&copy; 2025 Trabzon Tanıtım Sayfası</small><br>
+    <a href="#top" class="btn btn-outline-primary btn-sm mt-2">Yukarı Çık</a>
+  </footer>
+</div>
+
+<!-- Bootstrap JS Bundle: Popper.js dahil -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
